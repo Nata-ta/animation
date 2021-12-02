@@ -1,0 +1,123 @@
+.pacman {
+    width: 0; 
+    height: 0;
+    border: 100px solid #F4B915;
+    border-right: 100px solid transparent;
+    border-radius: 50%;
+    position: relative;
+    z-index: 2;
+
+    &__eye {
+        position: absolute;
+        top: -61px;
+        left: 27px;
+        width: 0;
+        height: 0;
+        border: 15px solid #fff;
+        border-radius: 50%;
+        z-index: 2;
+
+        &-apple {
+            position: absolute;
+            top: -9px;
+            left: -7px;
+            width: 0;
+            height: 0;
+            border: 10px solid #000;
+            border-radius: 50%;
+            z-index: 2;
+        }
+    }
+
+    &::before,
+    &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: -100px;
+        left: -100px;
+        width: 0;
+        height: 0;
+        border: 100px solid #F4B915;
+        border-right: 100px solid transparent;
+        border-radius: 50%;
+        z-index: 1;
+    }
+
+    &::before {
+        animation: upperLip linear .5s infinite;
+    }
+
+    &::after {
+        animation: lowerLip linear .5s infinite;
+    }
+
+    &__food {
+        background-color: #000;
+        border-radius: 50%;
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        top: 50%;
+        right: -200px;
+        animation: foodBall linear infinite;
+        opacity: 0;
+
+        &:nth-child(1) {
+            animation-duration: 1s;
+            animation-delay: 0s;
+        }
+
+        
+        &:nth-child(2) {
+            animation-duration: 1s;
+            animation-delay: .5s;
+        }
+
+        
+        &:nth-child(3) {
+            animation-duration: 1s;
+            animation-delay: 1s;
+        }
+    }
+}
+
+@keyframes upperLip {
+    0% {
+        transform: rotate(270deg);
+    }
+    50% {
+        transform: rotate(360deg);
+    }
+    100% {
+        transform: rotate(270deg);
+    }
+}
+
+@keyframes lowerLip {
+    0% {
+        transform: rotate(90deg);
+    }
+    50% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(90deg);
+    }
+}
+
+@keyframes foodBall {
+    0% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    80% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateX(-200px);
+        opacity: 0;
+    }
+}
