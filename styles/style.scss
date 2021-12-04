@@ -52,11 +52,11 @@
     }
 
     &::before {
-        animation: upperLip linear .5s infinite;
+        animation: upperLip linear 1s infinite;
     }
 
     &::after {
-        animation: lowerLip linear .5s infinite;
+        animation: lowerLip linear 1s infinite;
     }
 
     &__food {
@@ -66,16 +66,19 @@
         height: 20px;
         position: absolute;
         top: 50%;
-        right: -150px;
-        animation: foodBall 1s linear infinite;
+        right: -170px;
+        animation: foodBall 2s linear infinite;
         opacity: 0;
 
         &:nth-child(2) {
-            right: -175px;
+            animation-duration: 2s;
+            animation-delay: 1s;
+
         }
 
         &:nth-child(3) {
-            right: -200px;
+            animation-duration: 2s;
+            animation-delay: 0s;
         }
     }
 }
@@ -267,8 +270,12 @@
         opacity: 1;
     }
 
-    80% {
+    50% {
         opacity: 1;
+    }
+
+    55% {
+        opacity: 0;
     }
 
     100% {
