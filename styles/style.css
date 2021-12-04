@@ -48,10 +48,10 @@
   z-index: 1;
 }
 .pacman::before {
-  animation: upperLip linear 0.5s infinite;
+  animation: upperLip linear 1s infinite;
 }
 .pacman::after {
-  animation: lowerLip linear 0.5s infinite;
+  animation: lowerLip linear 1s infinite;
 }
 .pacman__food {
   background-color: #000;
@@ -60,15 +60,17 @@
   height: 20px;
   position: absolute;
   top: 50%;
-  right: -150px;
-  animation: foodBall 1s linear infinite;
+  right: -170px;
+  animation: foodBall 2s linear infinite;
   opacity: 0;
 }
 .pacman__food:nth-child(2) {
-  right: -175px;
+  animation-duration: 2s;
+  animation-delay: 1s;
 }
 .pacman__food:nth-child(3) {
-  right: -200px;
+  animation-duration: 2s;
+  animation-delay: 0s;
 }
 
 .row {
@@ -227,8 +229,11 @@
     transform: translateX(0);
     opacity: 1;
   }
-  80% {
+  50% {
     opacity: 1;
+  }
+  55% {
+    opacity: 0;
   }
   100% {
     transform: translateX(-200px);
